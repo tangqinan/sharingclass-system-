@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>layout 后台大布局 - Layui</title>
+	<!-- <link rel="stylesheet" href="layui/css/layui.css"> -->
+	<link rel="stylesheet" href="../../static/Background_ws/layui/css/layui.css">
+</head>
+
+<body class="layui-layout-body">
+	<div class="layui-layout layui-layout-admin">
+		<div class="layui-header">
+			<div class="layui-logo">后台管理</div>
+			<!-- 头部区域（可配合layui已有的水平导航） -->
+			<ul class="layui-nav layui-layout-left">
+				<li class="layui-nav-item"><a href="index.html">控制台</a></li>
+			</ul>
+			<ul class="layui-nav layui-layout-right">
+				<li class="layui-nav-item">
+					<a href="javascript:;">
+						<img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+						管理员
+					</a>
+					<dl class="layui-nav-child">
+						<dd><a href="">基本资料</a></dd>
+						<dd><a href="">安全设置</a></dd>
+					</dl>
+				</li>
+				<li class="layui-nav-item"><a href="">退出</a></li>
+			</ul>
+		</div>
+
+		<div class="layui-side layui-bg-black">
+			<div class="layui-side-scroll">
+				<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+				<ul class="layui-nav layui-nav-tree" lay-filter="test">
+					<li class="layui-nav-item layui-nav-itemed">
+						<a class="" href="javascript:;">官网主页管理</a>
+						<dl class="layui-nav-child">
+							<dd><a href="index.html">轮播图管理</a></dd>
+							<!-- <dd><a href="存放时长统计.html"></a></dd>
+							<dd><a href="使用次数统计.html">使用次数统计</a></dd> -->
+						</dl>
+					</li>
+					<li class="layui-nav-item">
+						<a href="javascript:;">班级主页管理</a>
+						<dl class="layui-nav-child">
+							<dd><a href="快递员列表.html">课程表管理</a></dd>
+							<dd><a href="https://yz.cainiao.com/">班级相册管理</a></dd>
+						</dl>
+					</li>
+					<!-- <li class="layui-nav-item">
+						<a href="javascript:;">个人主页管理</a>
+						<dl class="layui-nav-child">
+							<dd><a href="快递员列表.html">管理</a></dd>
+							<dd><a href="https://yz.cainiao.com/">班级相册管理</a></dd>
+						</dl>
+					</li> -->
+
+				</ul>
+			</div>
+		</div>
+
+		<div class="layui-body">
+			<!-- 内容主体区域 -->
+			<div style="padding: 15px;">
+				<br>
+				<div style="background-color: #009688;height: 60px;text-align: center;">
+					<i class="layui-icon" style="font-size: 40px; color: black;">&#xe716;控制台</i>
+				</div>
+
+
+				<div class="layui-bg-gray" style="padding: 30px;">
+					<div class="layui-row layui-col-space15">
+						<div class="layui-col-md4">
+							<div class="layui-panel">
+								<div style="padding: 50px 30px;height: 100px; ">
+									<p style="color: black;font-size: 15px;margin-top: -30px;">用户数</p>
+									<p style="font-size: 40px;margin-top: 70px;">0/34</p>
+									<p style="font-size: 15px; color: black; margin-top: 10px;">总用户数:34人</p>
+								</div>
+							</div>
+						</div>
+						<div class="layui-col-md4">
+							<div class="layui-panel">
+								<div style="padding: 50px 30px; height: 100px;">
+									<p style="color: black;font-size: 15px;margin-top: -30px;">照片数</p>
+									<p style="font-size: 40px;margin-top: 70px;">0/20</p>
+									<p style="font-size: 15px; color: black; margin-top: 10px;">总照片数:20人</p>
+								</div>
+							</div>
+						</div>
+						<div class="layui-col-md4">
+							<div class="layui-panel">
+								<div style="padding: 50px 30px;height: 100px;">
+									<p style="color: black;font-size: 15px;margin-top: -30px;">留言数</p>
+									<p style="font-size: 40px;margin-top: 70px;">0</p>
+									<p style="font-size: 15px; color: black; margin-top: 10px;">总照片数:人</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- <div style="max-width: 728px;">
+					<table class="layui-hide" id="test-dropdown-table" lay-filter="test-dropdown-table"></table>
+				</div>
+				<script type="text/html" id="test-dropdown-toolbar-barDemo">
+					<a class="layui-btn layui-btn-xs layui-btn-primary" lay-event="edit">编辑</a>
+					<a class="layui-btn layui-btn-xs" lay-event="more">更多 <i class="layui-icon layui-icon-down"></i></a>
+				  </script>
+				<div style="margin-top: 15px">
+					<ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px"
+						data-ad-client="ca-pub-6111334333458862" data-ad-slot="3820120620"></ins>
+
+				</div> -->
+				<div class="layui-form">
+					<table class="layui-table">
+						<colgroup>
+							<col width="150">
+							<col width="150">
+							<col width="200">
+							<col>
+						</colgroup>
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>标题</th>
+								<th>图片</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>图片一</td>
+								<td><img src="../../static/Background_ws/img/1.jpg"></td>
+								<td>
+									<a class="layui-btn layui-btn-xs layui-btn-primary" lay-event="edit">编辑</a>
+									<a class="layui-btn layui-btn-xs" lay-event="more">更多 <i
+											class="layui-icon layui-icon-down"></i></a>
+								</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>图片二</td>
+								<td><img src="../../static/Background_ws/img/2.jpg"></td>
+								<td><a class="layui-btn layui-btn-xs layui-btn-primary" lay-event="edit">编辑</a>
+									<a class="layui-btn layui-btn-xs" lay-event="more">更多 <i
+											class="layui-icon layui-icon-down"></i></a>
+								</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>图片三</td>
+								<td><img src="../../static/Background_ws/img/3.jpg"></td>
+								<td> <a class="layui-btn layui-btn-xs layui-btn-primary" lay-event="edit">编辑</a>
+									<a class="layui-btn layui-btn-xs" lay-event="more">更多 <i
+											class="layui-icon layui-icon-down"></i></a>
+								</td>
+							</tr>
+							
+						</tbody>
+					</table>
+				</div>
+
+
+				<!-- <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+						<legend style="font-family:'宋体';font-size: 40px;">控制台</legend><br>
+						<h3>&nabla;&nabla;&nabla;用于展示当前系统中的统计数据，统计报表及重要的实时数据。</h3>
+					</fieldset>
+
+					<div class="layui-tab layui-tab-card">
+						<ul class="layui-tab-title">
+							<li class="layui-this">物品管理</li>
+							<li>自定义</li>
+							
+						</ul>
+						<div class="layui-tab-content" style="height: 600px;">
+							<div class="layui-tab-item layui-show">
+								<div>
+									<div style="width: 150px;height: 100px;background-color: #FFB800;position: absolute; margin-left: 25%;border-radius: 5px;text-align:center;">
+										<a style="font-family: '宋体';font-size: 30px;">实时温度</a><br><br>
+										<a style="font-family: '宋体';font-size: 30px;">23</a>
+									</div>
+									
+									<div style=" width: 150px;height: 100px;background-color: #01AAED;float: left;margin-left: 55%; border-radius: 5px;text-align:center;">
+										<a style="font-family: '宋体';font-size: 30px;">实时湿度</a><br><br>
+										<a style="font-family: '宋体';font-size: 30px;">23</a>
+									</div>
+								</div>
+								
+								<div  class="box"  style="width: 100%; height: 500px; "></div>
+									
+							</div>
+							<div class="layui-tab-item">开发中</div>
+							
+						</div>
+					</div>
+			</div>
+
+			<div class="layui-footer">
+				底部固定区域
+				© layui.com - 底部固定区域
+			</div> -->
+			</div>
+
+			<script src="../../static/Background_ws/layui/layui.js"></script>
+			<script type="text/javascript" src="../../static/Background_ws/layui/echarts.min.js"></script>
+			<script>
+				table.render({
+					elem: '#test-dropdown-table'
+					, url: '/test/table/demo5.json'
+					, title: '用户数据表'
+					, cols: [[
+						{ type: 'checkbox', fixed: 'left' }
+						, { field: 'id', title: 'ID', width: 80, fixed: 'left', unresize: true, sort: true }
+						, { field: 'username', title: '用户名', width: 120, edit: 'text' }
+						, { field: 'email', title: '邮箱', minWidth: 150 }
+						, { fixed: 'right', title: '操作', toolbar: '#test-dropdown-toolbar-barDemo', width: 150 }
+					]]
+					, limits: [3]
+					, page: true
+				});
+				table.on('tool(test-dropdown-table)', function (obj) {
+					var that = this
+						, data = obj.data;
+
+					if (obj.event === 'edit') {
+						layer.prompt({
+							formType: 2
+							, value: data.email
+						}, function (value, index) {
+							obj.update({
+								email: value
+							});
+							layer.close(index);
+						});
+					} else if (obj.event === 'more') {
+						//更多下拉菜单
+						dropdown.render({
+							elem: that
+							, show: true //外部事件触发即显示
+							, data: [{
+								title: 'item 1'
+								, id: 'aaa'
+							}, {
+								title: 'item 2'
+								, id: 'bbb'
+							}, {
+								title: '删除'
+								, id: 'del'
+							}]
+							, click: function (data, othis) {
+								//根据 id 做出不同操作
+								if (data.id === 'del') {
+									layer.confirm('真的删除行么', function (index) {
+										obj.del();
+										layer.close(index);
+									});
+								} else {
+									layer.msg('得到表格下拉菜单 id：' + data.id);
+								}
+							}
+							, align: 'right' //右对齐弹出（v2.6.8 新增）
+							, style: 'box-shadow: 1px 1px 10px rgb(0 0 0 / 12%);' //设置额外样式
+						});
+					}
+				});
+			</script>
+
+</body>
+
+</html>

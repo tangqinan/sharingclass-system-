@@ -1,0 +1,341 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="http://webthemez.com" />
+    <title>登录界面</title>
+    
+    <link rel="stylesheet" href="../../static/Official_ws/bootstrap/css/bootstrap.min.css">
+    <link href="../../static/Official_ws/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+    <link href="../../static/Official_ws/css/flexslider.css" rel="stylesheet" />
+    <link href="../../static/Official_ws/css/login_ercode.css" rel="stylesheet" />
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="../index/"><img src="../../static/Official_ws/img/logo.png"></a>
+            </div>
+            <div>
+                <ul class="nav-end">
+                    <li><a href="index.html"><b>官网主页</b></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="main">
+        <div class="main_bg">
+            <div class="loginBox">
+                <!-- signContent -->
+                <div class="signContent">
+                    <div class="signContainer">
+<!-- 1111111111111111111111111111111                       -->
+                        <form action="../login/" class="loginForm" id="form_key" data-module="smsFrom" method="post" onsubmit="check()">
+                            <!-- tab -->
+                            <div class="tabBox">
+                                <div class="tabBoxSwitch">
+                                    <ul class="tabBoxSwitchUl">
+                                        <li class="tab-active" data-id="0" id="switch_login">免密码登录/注册</li>
+                                        <li data-id="1">密码登录</li>
+                                    </ul>
+                                    <!-- 二维码 -->
+                                    <div class="ercode_tab swicth-ercode">
+                                        <svg width="52" height="52" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            fill="currentColor">
+                                            <defs>
+                                                <path id="id-3938311804-a" d="M0 0h48a4 4 0 0 1 4 4v48L0 0z"></path>
+                                            </defs>
+                                            <g fill="none" fill-rule="evenodd">
+                                                <mask id="id-3938311804-b" fill="#fff">
+                                                    <use xlink:href="#id-3938311804-a"></use>
+                                                </mask>
+                                                <use fill="#0084FF" xlink:href="#id-3938311804-a"></use>
+                                                <image width="52" height="52" mask="url(#id-3938311804-b)"
+                                                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAc8AAAHPCAYAAAA1eFErAAAABGdBTUEAALGOfPtRkwAAGNxJREFUeAHt3UGOG0cSBdDRgAdwA7wrr2Ce1QR4BI0JDHPhhToNfVZFZjxtugylIyNeVOuDK/7448+/fv7Hn/YCz9s1YvB1f0TqVC2SckrOt7M57+SbolZS4L/JYmoRIECAAIEOAsKzw5bNSIAAAQJRAeEZ5VSMAAECBDoICM8OWzYjAQIECEQFhGeUUzECBAgQ6CAgPDts2YwECBAgEBUQnlFOxQgQIECgg4Dw7LBlMxIgQIBAVEB4RjkVI0CAAIEOAsKzw5bNSIAAAQJRAeEZ5VSMAAECBDoICM8OWzYjAQIECEQFhGeUUzECBAgQ6CAgPDts2YwECBAgEBUQnlFOxQgQIECgg4Dw7LBlMxIgQIBAVEB4RjkVI0CAAIEOAsKzw5bNSIAAAQJRgUuy2vN2TZZT6xuBr/vjmxPH/3XFdyDplKqVdErVSs32eut27in5W5VySva0c63kO+6T585vitkIECBA4CMCwvMjrIoSIECAwM4CwnPn7ZqNAAECBD4iIDw/wqooAQIECOwsIDx33q7ZCBAgQOAjAsLzI6yKEiBAgMDOAsJz5+2ajQABAgQ+IiA8P8KqKAECBAjsLCA8d96u2QgQIEDgIwLC8yOsihIgQIDAzgLCc+ftmo0AAQIEPiIgPD/CqigBAgQI7CwgPHfertkIECBA4CMCwvMjrIoSIECAwM4CwnPn7ZqNAAECBD4iIDw/wqooAQIECOwsIDx33q7ZCBAgQOAjApePVP3Noslv+/7NVj7yv+/87fEVd5f0Ts2XqvORF1TR5QR2f5+Sv8Op5frkmZJUhwABAgTaCAjPNqs2KAECBAikBIRnSlIdAgQIEGgjIDzbrNqgBAgQIJASEJ4pSXUIECBAoI2A8GyzaoMSIECAQEpAeKYk1SFAgACBNgLCs82qDUqAAAECKQHhmZJUhwABAgTaCAjPNqs2KAECBAikBIRnSlIdAgQIEGgjIDzbrNqgBAgQIJASEJ4pSXUIECBAoI2A8GyzaoMSIECAQEpAeKYk1SFAgACBNgLCs82qDUqAAAECKQHhmZJUhwABAgTaCAjPNqs2KAECBAikBC6pQuoQeAk8b1cQEwIVnb7uj4nOjz1S0elYAbdVFfDJs+pm9EWAAAECZQWEZ9nVaIwAAQIEqgoIz6qb0RcBAgQIlBUQnmVXozECBAgQqCogPKtuRl8ECBAgUFZAeJZdjcYIECBAoKqA8Ky6GX0RIECAQFkB4Vl2NRojQIAAgaoCwrPqZvRFgAABAmUFhGfZ1WiMAAECBKoKCM+qm9EXAQIECJQVEJ5lV6MxAgQIEKgqIDyrbkZfBAgQIFBWQHiWXY3GCBAgQKCqgPCsuhl9ESBAgEBZAeFZdjUaI0CAAIGqAsKz6mb0RYAAAQJlBS5lO9NYe4Gv+yNi8LxdI3VeRVK1UrPFBgvOluxJLQJVBXzyrLoZfREgQIBAWQHhWXY1GiNAgACBqgLCs+pm9EWAAAECZQWEZ9nVaIwAAQIEqgoIz6qb0RcBAgQIlBUQnmVXozECBAgQqCogPKtuRl8ECBAgUFZAeJZdjcYIECBAoKqA8Ky6GX0RIECAQFkB4Vl2NRojQIAAgaoCwrPqZvRFgAABAmUFhGfZ1WiMAAECBKoKCM+qm9EXAQIECJQVEJ5lV6MxAgQIEKgqIDyrbkZfBAgQIFBWQHiWXY3GCBAgQKCqgPCsuhl9ESBAgEBZAeFZdjUaI0CAAIGqApeKjT1v14pt6WlC4Ov+mDh17JGKPR0rMHdb0in1O1yxpznNY0+lvI/teu3bfPJce3+6J0CAAIETBITnCeiuJECAAIG1BYTn2vvTPQECBAicICA8T0B3JQECBAisLSA8196f7gkQIEDgBAHheQK6KwkQIEBgbQHhufb+dE+AAAECJwgIzxPQXUmAAAECawsIz7X3p3sCBAgQOEFAeJ6A7koCBAgQWFtAeK69P90TIECAwAkCwvMEdFcSIECAwNoCwnPt/emeAAECBE4QEJ4noLuSAAECBNYWEJ5r70/3BAgQIHCCgPA8Ad2VBAgQILC2gPBce3+6J0CAAIETBC7JO5Pf+p7sS601BZ63a6Tx5Hupp8hKFPm/QPLdhHqsgE+ex3q7jQABAgQ2EBCeGyzRCAQIECBwrIDwPNbbbQQIECCwgYDw3GCJRiBAgACBYwWE57HebiNAgACBDQSE5wZLNAIBAgQIHCsgPI/1dhsBAgQIbCAgPDdYohEIECBA4FgB4Xmst9sIECBAYAMB4bnBEo1AgAABAscKCM9jvd1GgAABAhsICM8NlmgEAgQIEDhWQHge6+02AgQIENhAQHhusEQjECBAgMCxAsLzWG+3ESBAgMAGAsJzgyUagQABAgSOFRCex3q7jQABAgQ2EBCeGyzRCAQIECBwrMCPn3//OfZKtxGYE/i6P+YOfnPqebt+c2L+r1M9zd/4/cnkfN/fNneC05yTU+sK+OS57u50ToAAAQInCQjPk+BdS4AAAQLrCgjPdXencwIECBA4SUB4ngTvWgIECBBYV0B4rrs7nRMgQIDASQLC8yR41xIgQIDAugLCc93d6ZwAAQIEThIQnifBu5YAAQIE1hUQnuvuTucECBAgcJKA8DwJ3rUECBAgsK6A8Fx3dzonQIAAgZMEhOdJ8K4lQIAAgXUFhOe6u9M5AQIECJwkIDxPgnctAQIECKwrIDzX3Z3OCRAgQOAkAeF5ErxrCRAgQGBdAeG57u50ToAAAQInCVyS3/ie+kb7ij2dtJ9fXpt0+uVF/+IvU+/Av7iy/dGK70H7pUwCpHZX8fcuNduLMjVfsiefPCdfcscIECBAgMBbQHi+JfwkQIAAAQKTAsJzEsoxAgQIECDwFhCebwk/CRAgQIDApIDwnIRyjAABAgQIvAWE51vCTwIECBAgMCkgPCehHCNAgAABAm8B4fmW8JMAAQIECEwKCM9JKMcIECBAgMBbQHi+JfwkQIAAAQKTAsJzEsoxAgQIECDwFhCebwk/CRAgQIDApIDwnIRyjAABAgQIvAWE51vCTwIECBAgMCkgPCehHCNAgAABAm8B4fmW8JMAAQIECEwKCM9JKMcIECBAgMBbQHi+JfwkQIAAAQKTApfJc8se+7o/Ir0/b9dInWSRij0l50vVSr0Dr34qmqfmS86W6in1DiTr7Dzbyyk13+7vk0+eyd8qtQgQIECghYDwbLFmQxIgQIBAUkB4JjXVIkCAAIEWAsKzxZoNSYAAAQJJAeGZ1FSLAAECBFoICM8WazYkAQIECCQFhGdSUy0CBAgQaCEgPFus2ZAECBAgkBQQnklNtQgQIECghYDwbLFmQxIgQIBAUkB4JjXVIkCAAIEWAsKzxZoNSYAAAQJJAeGZ1FSLAAECBFoICM8WazYkAQIECCQFhGdSUy0CBAgQaCEgPFus2ZAECBAgkBQQnklNtQgQIECghcAl+W3fLcQCQ6a+qT3QSrxE8n1K1Up6p2qlZnstMFkr/kL8ZsHkbKnd/eZIbf73pHfqPUj25JNnm1fZoAQIECCQEhCeKUl1CBAgQKCNgPBss2qDEiBAgEBKQHimJNUhQIAAgTYCwrPNqg1KgAABAikB4ZmSVIcAAQIE2ggIzzarNigBAgQIpASEZ0pSHQIECBBoIyA826zaoAQIECCQEhCeKUl1CBAgQKCNgPBss2qDEiBAgEBKQHimJNUhQIAAgTYCwrPNqg1KgAABAikB4ZmSVIcAAQIE2ggIzzarNigBAgQIpASEZ0pSHQIECBBoIyA826zaoAQIECCQEhCeKUl1CBAgQKCNwOXr/mgz7G6DPm/X2EgV34NUT0mnFHhqtlQ/rzoVnZLz7VzL+zS33eQ77pPnnLlTBAgQIEBgCAjPQeGBAAECBAjMCQjPOSenCBAgQIDAEBCeg8IDAQIECBCYExCec05OESBAgACBISA8B4UHAgQIECAwJyA855ycIkCAAAECQ0B4DgoPBAgQIEBgTkB4zjk5RYAAAQIEhoDwHBQeCBAgQIDAnIDwnHNyigABAgQIDAHhOSg8ECBAgACBOQHhOefkFAECBAgQGALCc1B4IECAAAECcwLCc87JKQIECBAgMASE56DwQIAAAQIE5gSE55yTUwQIECBAYAhckt+sXfHbzMekhR5S5rznlpp0Su1urnOnkgKp3SXfp9R8qdlS/VStk9ydT55Vt6wvAgQIECgrIDzLrkZjBAgQIFBVQHhW3Yy+CBAgQKCsgPAsuxqNESBAgEBVAeFZdTP6IkCAAIGyAsKz7Go0RoAAAQJVBYRn1c3oiwABAgTKCgjPsqvRGAECBAhUFRCeVTejLwIECBAoKyA8y65GYwQIECBQVUB4Vt2MvggQIECgrIDwLLsajREgQIBAVQHhWXUz+iJAgACBsgLCs+xqNEaAAAECVQWEZ9XN6IsAAQIEygoIz7Kr0RgBAgQIVBUQnlU3oy8CBAgQKCsgPMuuRmMECBAgUFXgUrGx5+0aa+vr/ojVqlYo6ZSaraJ3RaeU96vO7vMlrarVsru5jVT8d8Unz7ndOUWAAAECBIaA8BwUHggQIECAwJyA8JxzcooAAQIECAwB4TkoPBAgQIAAgTkB4Tnn5BQBAgQIEBgCwnNQeCBAgAABAnMCwnPOySkCBAgQIDAEhOeg8ECAAAECBOYEhOeck1MECBAgQGAICM9B4YEAAQIECMwJCM85J6cIECBAgMAQEJ6DwgMBAgQIEJgTEJ5zTk4RIECAAIEhIDwHhQcCBAgQIDAnIDznnJwiQIAAAQJDQHgOCg8ECBAgQGBOQHjOOTlFgAABAgSGwI8//vzr5/ivDR9S39Re8ZvMK64r5f2araJ5ar6Ks+3+PlWcz3swt5WKv3c+ec7tzikCBAgQIDAEhOeg8ECAAAECBOYEhOeck1MECBAgQGAICM9B4YEAAQIECMwJCM85J6cIECBAgMAQEJ6DwgMBAgQIEJgTEJ5zTk4RIECAAIEhIDwHhQcCBAgQIDAnIDznnJwiQIAAAQJDQHgOCg8ECBAgQGBOQHjOOTlFgAABAgSGgPAcFB4IECBAgMCcgPCcc3KKAAECBAgMAeE5KDwQIECAAIE5AeE55+QUAQIECBAYAsJzUHggQIAAAQJzAsJzzskpAgQIECAwBITnoPBAgAABAgTmBH78/PvP3NE1T33dH+Uaf96u5Xra2anibMkXIPU+JZ1SPSWdUrWSTqmedvZOGaXr+OSZFlWPAAECBLYXEJ7br9iABAgQIJAWEJ5pUfUIECBAYHsB4bn9ig1IgAABAmkB4ZkWVY8AAQIEthcQntuv2IAECBAgkBYQnmlR9QgQIEBgewHhuf2KDUiAAAECaQHhmRZVjwABAgS2FxCe26/YgAQIECCQFhCeaVH1CBAgQGB7AeG5/YoNSIAAAQJpAeGZFlWPAAECBLYXEJ7br9iABAgQIJAWEJ5pUfUIECBAYHsB4bn9ig1IgAABAmkB4ZkWVY8AAQIEthf48ceff/2sNmXFb0Wv+O3xyb2lzDkltzJXa3fzOQWnUgKpfwtS/bzqpN7x5Gw+eSY3rBYBAgQItBAQni3WbEgCBAgQSAoIz6SmWgQIECDQQkB4tlizIQkQIEAgKSA8k5pqESBAgEALAeHZYs2GJECAAIGkgPBMaqpFgAABAi0EhGeLNRuSAAECBJICwjOpqRYBAgQItBAQni3WbEgCBAgQSAoIz6SmWgQIECDQQkB4tlizIQkQIEAgKSA8k5pqESBAgEALAeHZYs2GJECAAIGkgPBMaqpFgAABAi0EhGeLNRuSAAECBJICwjOpqRYBAgQItBAQni3WbEgCBAgQSApcnrdrst62tTitu1q7W3d3yc53fg++7o8kVaRWsqfU7pI9+eQZeU0UIUCAAIFOAsKz07bNSoAAAQIRAeEZYVSEAAECBDoJCM9O2zYrAQIECEQEhGeEURECBAgQ6CQgPDtt26wECBAgEBEQnhFGRQgQIECgk4Dw7LRtsxIgQIBAREB4RhgVIUCAAIFOAsKz07bNSoAAAQIRAeEZYVSEAAECBDoJCM9O2zYrAQIECEQEhGeEURECBAgQ6CQgPDtt26wECBAgEBEQnhFGRQgQIECgk4Dw7LRtsxIgQIBAREB4RhgVIUCAAIFOApfkN2t3gttt1tQ3te/m8s95Ur8vSe9krX/Oe/Z/p7yTcyR7qri71HwVZ0u+Bz55JjXVIkCAAIEWAsKzxZoNSYAAAQJJAeGZ1FSLAAECBFoICM8WazYkAQIECCQFhGdSUy0CBAgQaCEgPFus2ZAECBAgkBQQnklNtQgQIECghYDwbLFmQxIgQIBAUkB4JjXVIkCAAIEWAsKzxZoNSYAAAQJJAeGZ1FSLAAECBFoICM8WazYkAQIECCQFhGdSUy0CBAgQaCEgPFus2ZAECBAgkBQQnklNtQgQIECghYDwbLFmQxIgQIBAUkB4JjXVIkCAAIEWAsKzxZoNSYAAAQJJgUuy2PN2TZZT6xuBr/vjmxPH/3XFdyDptPN8ydmS5se/xb++Men065vO+duK81V8n3zyPOf9dCsBAgQILCwgPBdentYJECBA4BwB4XmOu1sJECBAYGEB4bnw8rROgAABAucICM9z3N1KgAABAgsLCM+Fl6d1AgQIEDhHQHie4+5WAgQIEFhYQHguvDytEyBAgMA5AsLzHHe3EiBAgMDCAsJz4eVpnQABAgTOERCe57i7lQABAgQWFhCeCy9P6wQIECBwjoDwPMfdrQQIECCwsIDwXHh5WidAgACBcwSE5znubiVAgACBhQWE58LL0zoBAgQInCMgPM9xdysBAgQILCxwqdh7xW8NTzpV/Kb25HypWhXfg4o9pbx3r2N3cxtOOe3+75xPnnPvk1MECBAgQGAICM9B4YEAAQIECMwJCM85J6cIECBAgMAQEJ6DwgMBAgQIEJgTEJ5zTk4RIECAAIEhIDwHhQcCBAgQIDAnIDznnJwiQIAAAQJDQHgOCg8ECBAgQGBOQHjOOTlFgAABAgSGgPAcFB4IECBAgMCcgPCcc3KKAAECBAgMAeE5KDwQIECAAIE5AeE55+QUAQIECBAYAsJzUHggQIAAAQJzAsJzzskpAgQIECAwBITnoPBAgAABAgTmBITnnJNTBAgQIEBgCAjPQeGBAAECBAjMCVzmjjlFYF2B5+1arvmv+yPWU8X5Uj3t7pScL/ZChQpVnC31Xr6IfPIMvSjKECBAgEAfAeHZZ9cmJUCAAIGQgPAMQSpDgAABAn0EhGefXZuUAAECBEICwjMEqQwBAgQI9BEQnn12bVICBAgQCAkIzxCkMgQIECDQR0B49tm1SQkQIEAgJCA8Q5DKECBAgEAfAeHZZ9cmJUCAAIGQgPAMQSpDgAABAn0EhGefXZuUAAECBEICwjMEqQwBAgQI9BEQnn12bVICBAgQCAkIzxCkMgQIECDQR0B49tm1SQkQIEAgJCA8Q5DKECBAgEAfgUufUU16hEDy2+OT3/p+xOxn3ZE0P2uGI+5NOSXfy1St1GyvPaR6Su40NV+qzms2nzyTG1aLAAECBFoICM8WazYkAQIECCQFhGdSUy0CBAgQaCEgPFus2ZAECBAgkBQQnklNtQgQIECghYDwbLFmQxIgQIBAUkB4JjXVIkCAAIEWAsKzxZoNSYAAAQJJAeGZ1FSLAAECBFoICM8WazYkAQIECCQFhGdSUy0CBAgQaCEgPFus2ZAECBAgkBQQnklNtQgQIECghYDwbLFmQxIgQIBAUkB4JjXVIkCAAIEWAsKzxZoNSYAAAQJJAeGZ1FSLAAECBFoICM8WazYkAQIECCQFLsliqVrP2zVVSp2DBXbf3df9cbDo99elzHee7aWYmi9V5/vNOvEWSL3j73qJnz55JhTVIECAAIFWAsKz1boNS4AAAQIJAeGZUFSDAAECBFoJCM9W6zYsAQIECCQEhGdCUQ0CBAgQaCUgPFut27AECBAgkBAQnglFNQgQIECglYDwbLVuwxIgQIBAQkB4JhTVIECAAIFWAsKz1boNS4AAAQIJAeGZUFSDAAECBFoJCM9W6zYsAQIECCQEhGdCUQ0CBAgQaCUgPFut27AECBAgkBAQnglFNQgQIECglYDwbLVuwxIgQIBAQkB4JhTVIECAAIFWApfktL5hPam5Zq3kO1Dx2+Mr9pQ0T711KafkbKmeUkZV66TMK3qnZnvtzifPqm+wvggQIECgrIDwLLsajREgQIBAVQHhWXUz+iJAgACBsgLCs+xqNEaAAAECVQWEZ9XN6IsAAQIEygoIz7Kr0RgBAgQIVBUQnlU3oy8CBAgQKCsgPMuuRmMECBAgUFVAeFbdjL4IECBAoKyA8Cy7Go0RIECAQFUB4Vl1M/oiQIAAgbICwrPsajRGgAABAlUFhGfVzeiLAAECBMoKCM+yq9EYAQIECFQVEJ5VN6MvAgQIECgrIDzLrkZjBAgQIFBVQHhW3Yy+CBAgQKCsgPAsuxqNESBAgEBVgf8BFD9n1bBqeo4AAAAASUVORK5CYII=">
+                                                </image>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <!-- 二维码部分 -->
+                                </div>
+                            </div>
+                            <!-- tabContent -->
+                            <div class="tabContent">
+                                <div class="tabcont  tabContentPhone active">
+                                    <div class="tabcontent">
+                                        <div class="classInputGroup">
+                                            <label for="" class="inputLabel classLabel">
+                                                <input type="text" value="" name="class_id" id="classInput" class="classroom"
+                                                    placeholder="请输入班级id" autocomplete="on">
+                                            </label>
+                                        </div>
+                                        <div class="phoneInputGroup">
+                                            <label for="" class="inputLabel phoneLabel">
+                                                <input type="text" value="{{ email }}" name="email" id="email" class="youxiang"
+                                                    placeholder="请输入邮箱号" autocomplete="on">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="tabcontent">
+                                        <div class="phoneInputGroup" id="pin_code">
+                                            <label for="" class="inputLabel">
+                                                <input type="text"  name="pin" lay-verify="required" class="inputStyle msgInput" placeholder="请输入验证码" autocomplete="off">
+                                            </label>
+                                        </div>
+
+                                            <input id='pin' class="phone-btn msgBtn" type="button" value="获取验证码">
+
+                                    </div>
+                                </div>
+                                <!-- tabContentAccount -->
+                                <div class="tabcont tabContentAccount">
+                                    <div class="tabcontent">
+                                        <div class="login-out-phoneBox">
+                                            <div class="phoneBox">
+                                                <div class="phoneGroup">
+                                                    <button class="phone-btn selectBtn" type="button"
+                                                        data-type="selected">
+                                                        <span>中国 +86</span>
+                                                        <svg class="Zi--Select Select-arrow" fill="currentColor"
+                                                            viewBox="0 0 24 24">
+                                                            <path
+                                                                d="M12 16.183l2.716-2.966a.757.757 0 0 1 1.064.001.738.738 0 0 1 0 1.052l-3.247 3.512a.758.758 0 0 1-1.064 0L8.22 14.27a.738.738 0 0 1 0-1.052.758.758 0 0 1 1.063 0L12 16.183zm0-9.365L9.284 9.782a.758.758 0 0 1-1.064 0 .738.738 0 0 1 0-1.052l3.248-3.512a.758.758 0 0 1 1.065 0L15.78 8.73a.738.738 0 0 1 0 1.052.757.757 0 0 1-1.063.001L12 6.818z"
+                                                                fill-rule="evenodd"></path>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <div class="selectConentent">
+                                                    <div class="selectOptions">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span class="line-show"></span>
+                                        </div>
+                                        <div class="classInputGroup">
+
+                                            <label for="" class="inputLabel classLabel">
+                                                <input type="text" value="" name="class_id" id="classInput" class="classroom"
+                                                    placeholder="请输入班级id" autocomplete="on">
+                                            </label>
+                                        </div>
+                                        <div class="phoneInputGroup">
+                                            <label for="" class="inputLabel phoneLabel">
+                                                <input type="text" value="{{ email }}" name="email" id="accountUser" class="login-1"
+                                                    placeholder="输入邮箱号登录" autocomplete="on">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="tabcontent">
+                                        <div id="password_input" class="phoneInputGroup">
+                                            <label for="" class="inputLabel phoneLabel">
+                                                <input type="password" value="" name="password" id="accountpwd" class="login-2"
+                                                    placeholder="密码" autocomplete="off">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <span id="remind">{{errormsg}}</span>
+                                </div>
+                            </div>
+                            <!-- loginbox -->
+                            <div class="login_box">
+                                <!-- <button type="button"
+                                    class="phone-btn out-login-btn-shw out-login-btn SignFlow-switchLogin"
+                                    data-btn="out-login-btn" data-clilck="isClick">海外手机登录</button> -->
+
+                                <button type="button" class="phone-btn voice-btn sms-voice-btn" id="forget"
+                                    data-btn="sms-voice-btn" data-forV="forget-voice"></button>
+                            </div>
+
+                            <button id="submit" type="submit" class="button fromSubmit"
+                                data-type="smsSubmit">注册/登录</button>
+                            <!-- tips -->
+                            <div class="SignContainer-tip">
+                                <div>
+                                    <div>未注册手机验证后自动登录，注册即代表同意<a href="#">《班级协议》</a><a href="#"></a></div>
+                                </div>
+                            </div>
+                        </form>
+<!-- 111111111111111111111111111                       -->
+                        <!-- ercodeSgin -->
+                        <div class="ercodeSignBox">
+                            <div class="ercode_tab switch-input">
+                                <svg width="52" height="52" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    fill="currentColor">
+                                    <defs>
+                                        <path id="id-14580708-a" d="M0 0h48a4 4 0 0 1 4 4v48L0 0z"></path>
+                                    </defs>
+                                    <g fill="none" fill-rule="evenodd">
+                                        <mask id="id-14580708-b" fill="#fff">
+                                            <use xlink:href="#id-14580708-a"></use>
+                                        </mask>
+                                        <use fill="#0084FF" xlink:href="#id-14580708-a"></use>
+                                        <path fill="#FFF"
+                                            d="M22.125 4h13.75A4.125 4.125 0 0 1 40 8.125v27.75A4.125 4.125 0 0 1 35.875 40h-13.75A4.125 4.125 0 0 1 18 35.875V8.125A4.125 4.125 0 0 1 22.125 4zm6.938 34.222c1.139 0 2.062-.945 2.062-2.11 0-1.167-.923-2.112-2.063-2.112-1.139 0-2.062.945-2.062 2.111 0 1.166.923 2.111 2.063 2.111zM21 8.333v24h16v-24H21z"
+                                            mask="url(#id-14580708-b)"></path>
+                                        <g mask="url(#id-14580708-b)">
+                                            <path fill="#FFF"
+                                                d="M46.996 15.482L39 19.064l-7.996-3.582A1.6 1.6 0 0 1 32.6 14h12.8a1.6 1.6 0 0 1 1.596 1.482zM47 16.646V24.4a1.6 1.6 0 0 1-1.6 1.6H32.6a1.6 1.6 0 0 1-1.6-1.6v-7.754l8 3.584 8-3.584z">
+                                            </path>
+                                            <path fill="#0084FF" d="M31 15.483v1.17l8 3.577 8-3.577v-1.17l-8 3.581z"
+                                                fill-rule="nonzero"></path>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <!-- ercodeConent -->
+                            <div class="ercodeContent">
+                                <div class="Qrcode-title">扫码登录</div>
+                                <div class="ercodeBox">
+                                    <div class="Qrcode-img" id="qrcode">
+                                        <img width="150" height="150" src="css/kjh/img/image.png" alt="二维码">
+                                    </div>
+                                    <p>打开<a href="#" target="_blank" rel="noopener noreferrer">
+                                          </a></p>
+                                    <p>在「我的」页面右上角打开扫一扫</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--  -->
+                <div class="css-1hmxk26"></div>
+                <!-- signSocial -->
+                <div class="footSign signSocial">
+                    <span class="social-title">社交帐号登录</span>
+                    <!-- <span class="Login-socialButtonGroup">
+                        <button type="button" class="button Login-socialButton">
+                            <svg class="Zi Zi--WeChat Login-socialIcon" fill="#60c84d" viewBox="0 0 24 24" width="20"
+                                height="20">
+                                <path
+                                    d="M2.224 21.667s4.24-1.825 4.788-2.056C15.029 23.141 22 17.714 22 11.898 22 6.984 17.523 3 12 3S2 6.984 2 11.898c0 1.86.64 3.585 1.737 5.013-.274.833-1.513 4.756-1.513 4.756zm5.943-9.707c.69 0 1.25-.569 1.25-1.271a1.26 1.26 0 0 0-1.25-1.271c-.69 0-1.25.569-1.25 1.27 0 .703.56 1.272 1.25 1.272zm7.583 0c.69 0 1.25-.569 1.25-1.271a1.26 1.26 0 0 0-1.25-1.271c-.69 0-1.25.569-1.25 1.27 0 .703.56 1.272 1.25 1.272z"
+                                    fill-rule="evenodd"></path>
+                            </svg>
+                            微信
+                        </button> -->
+                    <button type="button" class="button Login-socialButton ">
+                        <svg class="Zi Zi--QQ Login-socialIcon" fill="#50c8fd" viewBox="0 0 24 24" width="20"
+                            height="20">
+                            <path
+                                d="M12.003 2c-2.265 0-6.29 1.364-6.29 7.325v1.195S3.55 14.96 3.55 17.474c0 .665.17 1.025.281 1.025.114 0 .902-.484 1.748-2.072 0 0-.18 2.197 1.904 3.967 0 0-1.77.495-1.77 1.182 0 .686 4.078.43 6.29 0 2.239.425 6.287.687 6.287 0 0-.688-1.768-1.182-1.768-1.182 2.085-1.77 1.905-3.967 1.905-3.967.845 1.588 1.634 2.072 1.746 2.072.111 0 .283-.36.283-1.025 0-2.514-2.166-6.954-2.166-6.954V9.325C18.29 3.364 14.268 2 12.003 2z"
+                                fill-rule="evenodd">
+                            </path>
+                        </svg>
+                        QQ
+                    </button>
+                    <!-- <button type="button" class="button Login-socialButton">
+                            <svg class="Zi Zi--Weibo Login-socialIcon" fill="#fb6622" viewBox="0 0 24 24" width="20"
+                                height="20">
+                                <path fill="#FB6622"
+                                    d="M15.518 3.06c8.834-.854 7.395 7.732 7.394 7.731-.625 1.439-1.673.309-1.673.309.596-7.519-5.692-6.329-5.692-6.329-.898-1.067-.029-1.711-.029-1.711zm4.131 6.985c-.661 1.01-1.377.126-1.376.126.205-3.179-2.396-2.598-2.396-2.598-.719-.765-.091-1.346-.091-1.346 4.882-.551 3.863 3.818 3.863 3.818zM5.317 7.519s4.615-3.86 6.443-1.328c0 0 .662 1.08-.111 2.797.003-.003 3.723-1.96 5.408.159 0 0 .848 1.095-.191 2.649 0 0 2.918-.099 2.918 2.715 0 2.811-4.104 6.44-9.315 6.44-5.214 0-8.026-2.092-8.596-3.102 0 0-3.475-4.495 3.444-10.33zm10.448 7.792s.232-4.411-5.71-4.207c-6.652.231-6.579 4.654-6.579 4.654.021.39.097 3.713 5.842 3.713 5.98 0 6.447-4.16 6.447-4.16zm-9.882.86s-.059-3.632 3.804-3.561c3.412.06 3.206 3.165 3.206 3.165s-.026 2.979-3.684 2.979c-3.288 0-3.326-2.583-3.326-2.583zm2.528 1.037c.672 0 1.212-.447 1.212-.998 0-.551-.543-.998-1.212-.998-.672 0-1.215.447-1.215.998 0 .551.546.998 1.215.998z"
+                                    fill-rule="evenodd">
+                                </path>
+                            </svg>
+                            微博
+                        </button> -->
+                    </span>
+                </div>
+                <!-- signDownload -->
+                <!-- <div class="footSign signDownload">
+                    <div class="css-eow14e rt">
+                        <button class="button css-c01qo8" type="button">
+                            <span style="display: inline-flex; align-items: center;">​
+                                <svg width="20" height="20" class="css-vfpo4o" fill="currentColor">
+                                    <g fill="none" fill-rule="evenodd">
+                                        <path fill="#0084FF"
+                                            d="M15.234 0C18.125 0 20 1.875 20 4.766v10.468C20 18.125 18.125 20 15.234 20H4.766C1.875 20 0 18.125 0 15.234V4.766C0 1.875 1.875 0 4.766 0h10.468z">
+                                        </path>
+                                        <path d="M0 0h20v20H0z"></path>
+                                        <path fill="#FFF"
+                                            d="M10.313 10.352c0-.012-.004-1.036-.328-1.055h-2.26a48.42 48.42 0 0 0 .095-3.164h2.21c0-.003.084-.982-.37-.977H5.837c.15-.563.34-1.15.566-1.758 0 0-1.039 0-1.393.937-.146.386-.57 1.87-1.325 3.388.254-.028 1.095-.05 1.59-.963.091-.255.109-.289.222-.627h1.246c0 .452-.051 2.897-.072 3.164H4.414c-.507.019-.672 1.043-.672 1.055h2.832c-.19 2.15-1.209 3.972-3.058 5.413.884.253 1.766-.04 2.202-.43 0 0 .992-.906 1.536-3.004l2.33 2.817s.342-1.166-.053-1.734c-.328-.387-1.212-1.434-1.589-1.814l-.631.504a7.686 7.686 0 0 0 .34-1.752h2.662zM10.898 5v9.441h1.015l.334 1.145 1.82-1.144h2.144V5h-5.313zm4.258 8.398h-1.214l-1.212.782-.22-.782h-.518V6.016h3.164v7.382z">
+                                        </path>
+                                    </g>
+                                </svg>
+                            </span>
+                            如何评价智科一班？
+                        </button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="../../static/Official_ws/js/jquery-1.10.2.js"></script>
+    <script src="../../static/Official_ws/js/login.js"></script>
+    <script src="../../static/Official_ws/js/qrcode.jsf"></script>
+    <!-- <svg width="52" height="52" xmlns:xlink="http://www.w3.org/1999/xlink" fill="currentColor"><defs><path id="id-14580708-a" d="M0 0h48a4 4 0 0 1 4 4v48L0 0z"></path></defs><g fill="none" fill-rule="evenodd"><mask id="id-14580708-b" fill="#fff"><use xlink:href="#id-14580708-a"></use></mask><use fill="#0084FF" xlink:href="#id-14580708-a"></use><path fill="#FFF" d="M22.125 4h13.75A4.125 4.125 0 0 1 40 8.125v27.75A4.125 4.125 0 0 1 35.875 40h-13.75A4.125 4.125 0 0 1 18 35.875V8.125A4.125 4.125 0 0 1 22.125 4zm6.938 34.222c1.139 0 2.062-.945 2.062-2.11 0-1.167-.923-2.112-2.063-2.112-1.139 0-2.062.945-2.062 2.111 0 1.166.923 2.111 2.063 2.111zM21 8.333v24h16v-24H21z" mask="url(#id-14580708-b)"></path><g mask="url(#id-14580708-b)"><path fill="#FFF" d="M46.996 15.482L39 19.064l-7.996-3.582A1.6 1.6 0 0 1 32.6 14h12.8a1.6 1.6 0 0 1 1.596 1.482zM47 16.646V24.4a1.6 1.6 0 0 1-1.6 1.6H32.6a1.6 1.6 0 0 1-1.6-1.6v-7.754l8 3.584 8-3.584z"></path><path fill="#0084FF" d="M31 15.483v1.17l8 3.577 8-3.577v-1.17l-8 3.581z" fill-rule="nonzero"></path></g></g></svg> -->
+</body>
+<script>
+    function check(){
+
+        var pd = $('#accountpwd').val()
+        if (pd != ''){
+            $('#accountpwd').val(md5(pd))
+        }
+
+    }
+
+    //输入框正在输入时
+    $("#email").on('input',function(){
+        console.log($('#email').val())
+    });
+
+    function start() {
+        document.getElementById("pin").disabled = true;
+        document.getElementById("pin").value = 10;
+        window.setTimeout("tick()", 1000);
+    }
+
+    function tick() {
+        var time = new Number(document.getElementById("pin").value);
+        if (time > 0) {
+            document.getElementById("pin").value = time - 1;
+            window.setTimeout("tick()", 1000);
+        } else {
+            document.getElementById("pin").disabled = false;
+            document.getElementById("pin").value = "获取验证码";
+        }
+    }
+
+    $('#pin').click(function () {
+        start();
+        // alert($('#phoneInput').val())
+        $.ajax({
+            type: 'get',
+            data:{'email':$('#email').val(),'class_id':$('#classInput').val()},
+            url: '../acquire_code/',
+            success: function (data) {
+
+                if (data['msg'] == 0){
+                    alert('请核对邮箱后再试吧~')
+                }
+                else {
+                    alert('验证码已发至您的邮箱~')
+                }
+            }
+        });
+    });
+
+    $('#switch_login').click(function () {
+        if($('#switch_login').html() == '验证码登录/注册'){
+            $('#password_input').hide();
+            $('#pin_input').fadeIn("slow");
+            $('#switch_login').html('密码登录')
+        }
+        else {
+            $('#password_input').fadeIn("slow");
+            $('#pin_input').hide();
+            $('#switch_login').html('验证码登录/注册')
+        }
+    });
+
+    window.onload = function () {
+        $('#pin_input').hide();
+    }
+</script>
+</html>
