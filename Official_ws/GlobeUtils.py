@@ -3,7 +3,6 @@ from email.mime.text import MIMEText
 
 
 def send_email(email,massage,subject,name=None):
-    print('++++++++++++++++'+email)
     if email!='' and email != None and ('@' in email):
         host = 'smtp.qq.com'
         port = 465

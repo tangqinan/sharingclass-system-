@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>photo</title>
+    <link rel="stylesheet" href="../../static/Background_ws/layui/css/layui.css">
+    <link rel="stylesheet" href="../../static/Background_ws/bg.css">
+    <link rel="stylesheet" href="../../static/Background_ws/js/jquery-1.9.1.min.js">
+    <link rel="stylesheet" href="../../static/Background_ws/photo.css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">后台管理</div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item"><a href="../../Background_ms/index/">控制台</a></li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="https://q.qlogo.cn/g?b=qq&amp;nk={{QQ}}&amp;s=100" class="layui-nav-img">
+                    管理员
+                </a>
+            </li>
+            <li class="layui-nav-item"><a href="../Official_ws/login.html">退出</a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;">成员管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="../../Background_ms/index/" target="blank">学生信息管理</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">班级管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="../../Background_ms/cls_table/" target="blank">课程表管理</a></dd>
+                        <dd><a href="../../Background_ms/photo/" target="blank">班级相册管理</a></dd>
+                         <dd><a href="../../Background_ms/cla_info/" target="blank">班级公告管理</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="../../Background_ms/stu_info/" target="blank">设置</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 15px;">
+            <br>
+            <div style="background-color: #009688;height: 60px;text-align: center;">
+                <i class="layui-icon" style="font-size: 40px; color: black;">&#xe716;班级相册管理控制台</i>
+            </div>
+
+            <div class="layui-bg-gray" style="padding: 30px;">
+                <div class="layui-row layui-col-space15">
+                    <div class="layui-col-md4">
+                        <div class="layui-panel">
+                            <div style="padding: 50px 30px;height: 100px; ">
+                                <p style="color: black;font-size: 15px;margin-top: -30px;">用户数</p>
+                                <p style="font-size: 40px;margin-top: 70px;">34</p>
+                                <p style="font-size: 15px; color: black; margin-top: 10px;">总用户数:34人</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-panel">
+                            <div style="padding: 50px 30px; height: 100px;">
+                                <p style="color: black;font-size: 15px;margin-top: -30px;">照片数</p>
+                                <p style="font-size: 40px;margin-top: 70px;">20</p>
+                                <p style="font-size: 15px; color: black; margin-top: 10px;">总照片数:20人</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-panel">
+                            <div style="padding: 50px 30px;height: 100px;">
+                                <p style="color: black;font-size: 15px;margin-top: -30px;">留言数</p>
+                                <p style="font-size: 40px;margin-top: 70px;">1</p>
+                                <p style="font-size: 15px; color: black; margin-top: 10px;">总照片数:人</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stu">
+                <a class="stu_ifo" href="#">班级相册上传 :</a>
+<!--                <button type="button" class="stu_bnt">&nbsp;&nbsp;点击上传&nbsp;&nbsp;</button>-->
+<!--                <a class="stu_install" href="#">班级相册样例下载</a>-->
+            </div>
+        </div>
+<!--        <div class="layui-upload">-->
+<!--            <button type="button" class="layui-btn layui-btn-normal" id="testList">选择多文件</button>-->
+<!--            <div class="layui-upload-list" style="max-width: 1000px;">-->
+<!--                <table class="layui-table">-->
+<!--                    <colgroup>-->
+<!--                        <col>-->
+<!--                        <col width="150">-->
+<!--                        <col width="260">-->
+<!--                        <col width="150">-->
+<!--                    </colgroup>-->
+<!--                    <thead>-->
+<!--                    <tr>-->
+<!--                        <th>文件名</th>-->
+<!--                        <th>大小</th>-->
+<!--                        <th>上传进度</th>-->
+<!--                        <th>操作</th>-->
+<!--                    </tr>-->
+<!--                    </thead>-->
+<!--                    <tbody id="demoList"></tbody>-->
+<!--                </table>-->
+<!--            </div>-->
+<!--            <button type="button" class="layui-btn" id="testListAction">开始上传</button>-->
+<!--        </div>-->
+                <div class="layui-upload">
+                    <form action="../../Background_ms/upload_multiple/" method="post" enctype="multipart/form-data">
+                        <input type="file" name="photo" multiple accept="image/*" @change="upload">
+                        <input type="text" name="class_id" value="" style="display: none">
+                        <input type="submit" value="点击上传">
+<!--                        <img src="" alt="" id="photo">-->
+                    </form>
+                    <br>
+                    <form action="../../Background_ms/upload_multiple/" method="post" enctype="multipart/form-data">
+                        <input type="submit" value="查看所有图片">
+                    </form>
+<!--                    <button type="button" class="layui-btn" id="test2">多图片上传</button>-->
+                    <blockquote class="layui-elem-quote layui-quote-nm" style="margin-top: 10px;height: 200px">
+                        <div id="demo2">
+                                <!--suppress HtmlUnknownTarget -->
+                            {% for file in data %}
+                                <img src="{{file}}" alt="" style="width: 200px;height: 200px">
+<!--                                <img src="../../static/images/1634561544936783.jpg" alt="" style="width: 100px;height: 100px">-->
+
+                            {% endfor %}
+                        </div>
+                    </blockquote>
+                </div>
+
+<!--                <div class="stu_photo">-->
+<!--                    <div class="layui-upload">-->
+<!--                        <button type="button" class="layui-btn" id="test1">上传图片</button>-->
+<!--                        <div class="layui-upload-list">-->
+<!--                            <img class="layui-upload-img" id="demo1">-->
+<!--                            <p id="demoText"></p>-->
+<!--                        </div>-->
+
+<!--                    </div>-->
+<!--                </div>-->
+    </div>
+</div>
+<script src="../../static/Background_ws/layui/layui.js"></script>
+<script src="../../static/Background_ws/js/jquery-1.9.1.min.js"></script>
+<script>
+    //多图片上传
+    upload.render({
+        elem: '#test2'
+        , url: '' //此处配置你自己的上传接口即可
+        , multiple: true
+        , before: function (obj) {
+            //预读本地文件示例，不支持ie8
+            obj.preview(function (index, file, result) {
+                $('#demo2').append('<img src="' + result + '" alt="' + file.name + '" class="layui-upload-img">')
+            });
+        }
+        , done: function (res) {
+            //上传完毕
+        }
+    });
+
+
+
+</script>
+
+
+</body>
+</html>

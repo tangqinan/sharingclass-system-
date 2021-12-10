@@ -1,0 +1,37 @@
+.stu {
+    margin-top: 20px;
+    font-size: 17px;
+
+}
+.stu_ifo {
+    margin-left: 50px;
+}
+.stu_bnt {
+    margin-left: 10px;
+}
+.stu_install {
+    margin-left: 40px;
+    text-decoration:underline
+}
+.stu_ke {
+    text-align: center;
+    font-size: 25px;
+}
+.stu_photo {
+    height: 300px;
+    /*width: 800px;*/
+}
+.layui-btn {
+    margin-left: 60px;
+}
+.cla_notice {
+    margin-top: 20px;
+}
+.layui-form-label {
+    margin-left: 0px;
+}
+#del {
+    margin-left: -18px;
+    color: #666;
+    background-color: transparent;
+}

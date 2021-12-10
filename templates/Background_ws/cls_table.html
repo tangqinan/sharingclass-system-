@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cla_table</title>
+    <link rel="stylesheet" href="../../static/Background_ws/layui/css/layui.css">
+    <link rel="stylesheet" href="../../static/Background_ws/bg.css">
+    <link rel="stylesheet" href="../../static/Background_ws/js/jquery-1.9.1.min.js">
+
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">后台管理</div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item"><a href="../../Background_ms/index">控制台</a></li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="https://q.qlogo.cn/g?b=qq&amp;nk={{QQ}}&amp;s=100" class="layui-nav-img">
+                    管理员
+                </a>
+            </li>
+            <li class="layui-nav-item"><a href="../Official_ws/login">退出</a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;">成员管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="../../Background_ms/index/" target="blank">学生信息管理</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">班级管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="../../Background_ms/cls_table/" target="blank">课程表管理</a></dd>
+                        <dd><a href="../../Background_ms/photo/" target="blank">班级相册管理</a></dd>
+                        <dd><a href="../../Background_ms/cla_info/" target="blank">班级公告管理</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="../../Background_ms/stu_info/" target="blank">设置</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 15px;">
+            <br>
+            <div style="background-color: #009688;height: 60px;text-align: center;">
+                <i class="layui-icon" style="font-size: 40px; color: black;">&#xe716;课程表管理控制台</i>
+            </div>
+
+            <div class="layui-bg-gray" style="padding: 30px;">
+                <div class="layui-row layui-col-space15">
+                    <div class="layui-col-md4">
+                        <div class="layui-panel">
+                            <div style="padding: 50px 30px;height: 100px; ">
+                                <p style="color: black;font-size: 15px;margin-top: -30px;">用户数</p>
+                                <p style="font-size: 40px;margin-top: 70px;">34</p>
+                                <p style="font-size: 15px; color: black; margin-top: 10px;">总用户数:34人</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-panel">
+                            <div style="padding: 50px 30px; height: 100px;">
+                                <p style="color: black;font-size: 15px;margin-top: -30px;">照片数</p>
+                                <p style="font-size: 40px;margin-top: 70px;">20</p>
+                                <p style="font-size: 15px; color: black; margin-top: 10px;">总照片数:20人</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-panel">
+                            <div style="padding: 50px 30px;height: 100px;">
+                                <p style="color: black;font-size: 15px;margin-top: -30px;">留言数</p>
+                                <p style="font-size: 40px;margin-top: 70px;">1</p>
+                                <p style="font-size: 15px; color: black; margin-top: 10px;">总照片数:人</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stu">
+                <a class="stu_ifo" href="#">课程表上传 :</a>
+                <form action="../../Background_ms/file_upload/" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file" multiple accept="">
+                    <button type="submit" class="stu_bnt">&nbsp;&nbsp;点击上传&nbsp;&nbsp;</button>
+                </form>
+                <br>
+                <a class="stu_install" href="{% url 'download' %}" rel="external nofollow">课程表样例下载</a>
+                <br>
+            </div>
+        </div>
+        <div>
+            {% for i in DATA %}
+            <div class="stu_ke" id="ke">
+                课程表
+            </div>
+            <div class="course" style="color:#464749; font-size: 15px;height: 600px">
+                <table frame=box border=1 align=center cellpadding=25 cellspacing=0 bordercolor=black width=1000px>
+                    <tr>
+                        <th colspan="2" align="center">节次</th>
+                        <th align="center" width="180">星期一</th>
+                        <th align="center" width="180">星期二</th>
+                        <th align="center" width="180">星期三</th>
+                        <th align="center" width="180">星期四</th>
+                        <th align="center" width="180">星期五</th>
+                        <th align="center" width="180">星期六</th>
+                        <th align="center" width="180">星期日</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" align=center width="40px" class="jie">第<br/>一<br/>大<br/>节</td>
+                        <td align="center" width="30px" class="yi">1</td>
+                        <td rowspan="2">
+                            {{i.number_1}}
+                        </td>
+                        <td rowspan="2">
+                            {{i.number_2}}
+                        </td>
+                        <td rowspan="2">
+                            {{i.number_3}}
+                        </td>
+                        <td rowspan="2">
+                            {{i.number_4}}
+
+                        </td>
+                        <td rowspan="2">
+                           {{i.number_5}}
+
+                        </td>
+
+                        <td rowspan="2">
+                            {{i.number_6}}
+                        </td>
+                        <td rowspan="2">
+                            {{i.number_7}}
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td align="center" class="yi">2</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" align=center class="jie">第<br/>二<br/>大<br/>节</td>
+                        <td align="center" class="yi">3</td>
+                        <td rowspan="2" class="1">
+                            {{i.number_8}}
+                        </td>
+                        <td rowspan="2" >
+                            {{i.number_9}}
+                        </td>
+                        <!--无课-->
+                        <td rowspan="2">
+                            {{i.number_10}}
+                        </td>
+                        <td rowspan="2">
+                            {{i.number_11}}
+                        </td>
+                        <td rowspan="2" >
+                            {{i.number_12}}
+                        </td>
+                        <td rowspan="2">
+                            {{i.number_13}}
+                        </td>
+                        <!--无课-->
+                        <td rowspan="2">
+                            {{i.number_14}}
+                        </td>
+                        <!--无课-->
+                    </tr>
+                    <tr>
+                        <td align="center" class="yi">4</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" align=center class="jie">第<br/>三<br/>大<br/>节</td>
+                        <td align="center" class="yi">5</td>
+                        <td rowspan="2">
+                            {{i.number_15}}
+                        </td>
+
+                        <td rowspan="2">
+                            {{i.number_16}}
+                        </td>
+                        <td rowspan="2">
+                            {{i.number_17}}
+                        </td>
+                        <td rowspan="2">
+                            {{i.number_18}}
+                        </td>
+                        <td rowspan="2">
+                            {{i.number_19}}
+                        </td>
+                        <td rowspan="2" >
+                            {{i.number_20}}
+                        </td>
+                        <!--无课-->
+                        <td rowspan="2">
+                            {{i.number_21}}
+                        </td>
+                        <!--无课-->
+                    </tr>
+                    <tr>
+                        <td align="center" class="yi">6</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" align=center class="jie">第<br/>四<br/>大<br/>节</td>
+                        <td align="center" class="yi">7</td>
+                        <td rowspan="2" >
+                            {{i.number_22}}
+                        </td>
+                        <td rowspan="2">
+                            {{i.number_23}}
+                        </td>
+                        <td rowspan="2">
+                            {{i.number_24}}
+                        </td>
+                        <!--无课-->
+                        <td rowspan="2">
+                            {{i.number_25}}
+                        </td>
+                        <!--无课-->
+                        <td rowspan="2">
+                            {{i.number_26}}
+                        </td>
+                        <td rowspan="2">
+                            {{i.number_27}}
+                        </td>
+                        <!--无课-->
+                        <td rowspan="2">
+                            {{i.number_28}}
+                        </td>
+                        <!--无课-->
+                    </tr>
+                    <tr>
+                        <td align="center" class="yi">8</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3" align=center class="jie" style="height: 150px">第<br/>五<br/>大<br/>节</td>
+                        <td align="center" class="yi">9</td>
+                        <td rowspan="2">
+                            {{i.number_29}}
+                        </td>
+                        <td rowspan="2">
+                            {{i.number_30}}
+                        </td>
+                        <td rowspan="2">
+                            {{i.number_31}}
+                        </td>
+                        <td rowspan="2">
+                            {{i.number_32}}
+                        </td>
+                        <td rowspan="2">
+                            {{i.number_33}}
+                        </td>
+                        <!--无课-->
+                        <td rowspan="2">
+                            {{i.number_34}}
+                        </td>
+                        <!--无课-->
+                        <td rowspan="2">
+                            {{i.number_35}}
+                        </td>
+                        <!--无课-->
+                    </tr>
+                    <tr>
+                        <td align="center" class="yi" >10</td>
+                    </tr>
+                    <tr>
+                        <td align="center" class="yi">11</td>
+                        <td>
+                            {{i.number_36}}
+                        </td>
+                        <td>
+                            {{i.number_37}}
+                        </td>
+                        <td>
+                            {{i.number_38}}
+                        </td>
+                        <td>
+                            {{i.number_39}}
+                        </td>
+                        <td>
+                            {{i.number_40}}
+                        </td>
+                        <td>
+                            {{i.number_41}}
+                        </td>
+                        <td>
+                            {{i.number_42}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<script src="../../static/Background_ws/js/jquery-1.9.1.min.js"></script>
+<script src="../../static/Background_ws/layui/layui.js"></script>
+
+
+</body>
+
+</html>

@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 #classInput {
     border: none;
     box-shadow: none;
@@ -12,11 +6,31 @@
     border-bottom: 1px solid #ebebeb;
     width: 340px;
 }
-
-
-
-
-#email{
+#email {
+    border: none;
+    box-shadow: none;
+    font-size: 16px;
+    border-bottom: 1px solid #ebebeb;
+    width: 340px;
+    margin-left: -355px;
+    margin-top: 60px;
+}
+#yanzheng {
+    border: none;
+    box-shadow: none;
+    font-size: 16px;
+    border-bottom: 1px solid #ebebeb;
+    width: 340px;
+    margin-top: 20px;
+}
+#classInput2 {
+    border: none;
+    box-shadow: none;
+    font-size: 16px;
+    border-bottom: 1px solid #ebebeb;
+    width: 340px;
+}
+#phoneInput{
     border: none;
     box-shadow: none;
     font-size: 16px;
@@ -27,10 +41,6 @@
     
 
 }
-
-/* #phoneInput :focus{
-    
-} */
 
 #msgInput {
     border: none;
@@ -44,10 +54,10 @@
     border: none;
     box-shadow: none;
     font-size: 16px;
-    margin-top:50px;
-    margin-left: -352px;
     border-bottom: 1px solid #ebebeb;
     width: 340px;
+    margin-top: 50px;
+    margin-left: -355px;
 }
 #accountpwd {
     border: none;
@@ -474,12 +484,12 @@ button:focus {
     vertical-align: middle;
 }
 
-.youxiang {
-    margin-top: 25px;
-    border-bottom: 1px solid #ebebeb;
-    
-   
-}
+/*.youxiang {*/
+/*    margin-top: 25px;*/
+/*    border-bottom: 1px solid #ebebeb;*/
+/*    */
+/*   */
+/*}*/
 
 
 /* .inputLabel {

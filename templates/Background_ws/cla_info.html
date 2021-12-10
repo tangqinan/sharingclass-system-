@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>cla_info</title>
+    <link rel="stylesheet" href="../../static/Background_ws/layui/css/layui.css">
+    <link rel="stylesheet" href="../../static/Background_ws/bg.css">
+</head>
+
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">后台管理</div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item"><a href="../../Background_ms/index/">控制台</a></li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="https://q.qlogo.cn/g?b=qq&amp;nk={{QQ}}&amp;s=100" class="layui-nav-img">
+                    管理员
+                </a>
+            </li>
+            <li class="layui-nav-item"><a href="../../Official_ws/login/">退出</a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;">成员管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="../../Background_ms/index/" target="blank">学生信息管理</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">班级管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="../../Background_ms/cls_table/" target="blank">课程表管理</a></dd>
+                        <dd><a href="../../Background_ms/photo/" target="blank">班级相册管理</a></dd>
+                        <dd><a href="../../Background_ms/cla_info/" target="blank">班级公告管理</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="../../Background_ms/stu_info/" target="blank">设置</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 15px;">
+            <br>
+            <div style="background-color: #009688;height: 60px;text-align: center;">
+                <i class="layui-icon" style="font-size: 40px; color: black;">&#xe716;学生信息管理控制台</i>
+            </div>
+
+
+            <div class="layui-bg-gray" style="padding: 30px;">
+                <div class="layui-row layui-col-space15">
+                    <div class="layui-col-md4">
+                        <div class="layui-panel">
+                            <div style="padding: 50px 30px;height: 100px; ">
+                                <p style="color: black;font-size: 15px;margin-top: -30px;">用户数</p>
+                                <p style="font-size: 40px;margin-top: 70px;">34</p>
+                                <p style="font-size: 15px; color: black; margin-top: 10px;">总用户数:34人</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-panel">
+                            <div style="padding: 50px 30px; height: 100px;">
+                                <p style="color: black;font-size: 15px;margin-top: -30px;">照片数</p>
+                                <p style="font-size: 40px;margin-top: 70px;">20</p>
+                                <p style="font-size: 15px; color: black; margin-top: 10px;">总照片数:20人</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-panel">
+                            <div style="padding: 50px 30px;height: 100px;">
+                                <p style="color: black;font-size: 15px;margin-top: -30px;">留言数</p>
+                                <p style="font-size: 40px;margin-top: 70px;">1</p>
+                                <p style="font-size: 15px; color: black; margin-top: 10px;">总照片数:人</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 内容主体区域 -->
+            <div class="cla_notice">
+                <label class="layui-form-label">
+                    公告主题
+                </label>
+                <div class="layui-input-block">
+                    <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入"
+                           class="layui-input">
+                </div>
+                <div style="height: 25px"></div>
+                <label class="layui-form-label">
+                    编辑人
+                </label>
+                <div class="layui-input-block">
+                    <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入"
+                           class="layui-input">
+                </div>
+                <div style="height: 25px"></div>
+                <div id="div1"></div>
+                <script src="https://unpkg.com/wangeditor/dist/wangEditor.min.js"></script>
+                <div style="height: 25px"></div>
+                <div>
+                    <button type="button" class="stu_bnt">&nbsp;&nbsp;点击上传&nbsp;&nbsp;</button>
+                </div>
+            </div>
+            <div style="height: 25px"></div>
+            <div class="preview">
+                <div style="font-size: 15px;margin-left: 10px">
+                    预览
+                </div>
+                <div class="layui-form">
+                    <table class="layui-table">
+                        <colgroup>
+                            <col width="400">
+                            <col width="200">
+                            <col width="200">
+                            <col>
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>公告名称</th>
+                            <th>上传时间</th>
+                            <th>编辑人</th>
+                            <th>修改</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>青年大学习观看</td>
+                            <td>2021.10.8</td>
+                            <td>刘培萍</td>
+                            <td>
+                                <button type="button" class="layui-btn" id="del">删除</button>
+                            </td>
+                        </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>
+</div>
+<script src="../../static/Background_ws/js/jquery-1.9.1.min.js"></script>
+<script src="../../static/Background_ws/layui/layui.js"></script>
+<script>
+    const E = window.wangEditor;
+    const editor = new E("#div1");
+    editor.config.height = 250;
+
+    // 过滤样式，默认 true
+    editor.config.pasteFilterStyle = true;
+
+    // 忽略图片，默认 false
+    editor.config.pasteIgnoreImg = false;
+
+    editor.config.pasteTextHandle = function (content) {
+        return content + "我是自定义内容哦"; //  返回 content 为处理后的内容
+    };
+
+    editor.create();
+
+</script>
+
+</body>
+
+</html>
