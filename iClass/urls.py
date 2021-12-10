@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
 urlpatterns = [
     path('Grade_ws/',include('Grade_ws.urls')),
     path('Individual_ws/',include('Individual_ws.urls')),
